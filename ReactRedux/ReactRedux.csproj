@@ -52,8 +52,10 @@
     <TypeScriptCompile Include="frontend\components\Counter\Counter.tsx" />
     <TypeScriptCompile Include="frontend\components\MainComponent\MainComponent.tsx" />
     <TypeScriptCompile Include="frontend\main.tsx" />
+    <TypeScriptCompile Include="frontend\reducers\counter-reducer.ts" />
     <TypeScriptCompile Include="frontend\reducers\index.ts" />
     <TypeScriptCompile Include="frontend\store\configureStore.ts" />
+    <TypeScriptCompile Include="frontend\store\store.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>

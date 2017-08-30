@@ -1,11 +1,9 @@
-﻿import * as React from 'react'
-import * as redux from 'redux'
-import { connect } from 'react-redux'
+﻿import * as React from "react";
+import * as redux from "redux";
+import { connect } from "react-redux";
 
-import { incrementCounter, resetCounter } from '../../actions/index'
-
-import { Store } from "../../reducers/index"
-
+import { incrementCounter, resetCounter } from "../../actions/index";
+import { Store } from "../../store/store";
 import "./counter.less";
 
 type ConnectedState = {
