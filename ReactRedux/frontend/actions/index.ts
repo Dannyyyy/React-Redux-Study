@@ -1,6 +1,4 @@
-﻿import * as redux from 'redux'
-
-export type Action =
+﻿export type Action =
 	// UI actions
 	{ type: 'INCREMENT_COUNTER', delta: number }
 	| { type: 'RESET_COUNTER' }

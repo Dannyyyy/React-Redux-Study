@@ -1,8 +1,8 @@
 ﻿import { combineReducers } from "redux";
 
-import { Store } from "../store/store";
+import { storeStates } from "../store/storeStates";
 import { counter } from "./counter-reducer";
 
-export default combineReducers<Store.AllReducers>({
+export default combineReducers<storeStates.AllReducers>({
 	counter
 })

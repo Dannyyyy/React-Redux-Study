@@ -1,11 +1,11 @@
-﻿import { Store } from "../store/store";
+﻿import { storeStates } from "../store/storeStates";
 import { Action } from "../actions/index";
 
-const initialState: Store.CounterState = {
+const initialState: storeStates.CounterState = {
 	value: 0
 }
 
-export function counter(state: Store.CounterState = initialState, action: Action): Store.CounterState {
+export function counter(state: storeStates.CounterState = initialState, action: Action): storeStates.CounterState {
 	switch (action.type) {
 		case 'INCREMENT_COUNTER':
 			const { delta } = action

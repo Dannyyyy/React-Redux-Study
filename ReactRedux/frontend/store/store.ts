@@ -1,10 +1,6 @@
-﻿export namespace Store {
+﻿import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from "../reducers/index";
 
-	export type CounterState = { value: number }
-
-	export type SportState = { sports: Array<string> }
-
-	export type AllReducers = {
-		counter: CounterState
-	}
-}
+const store = createStore(rootReducer, applyMiddleware(thunk));
+export default store;
