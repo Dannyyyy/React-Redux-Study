@@ -1,0 +1,24 @@
+﻿{
+	"compilerOptions": {
+		"removeComments": true,
+		"noImplicitAny": false,
+		"target": "es2015",
+		"module": "es2015",
+		"moduleResolution": "node",
+		"traceResolution": true,
+		"jsx": "react",
+		"experimentalDecorators": true,
+		"sourceMap": true,
+		"preserveConstEnums": true,
+		"noEmitOnError": false,
+		"locale": "en-US",
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"noFallthroughCasesInSwitch": true,
+		"noResolve": false, // !!! important
+		"alwaysStrict": true,
+		"noImplicitReturns": true,
+		"allowJs": true,
+		"strictNullChecks": true
+	}
+}
