@@ -17,11 +17,11 @@ type ConnectedDispatch = {
 	reset: () => void
 }
 
-const mapStateToProps = (state: Store.All): ConnectedState => ({
+const mapStateToProps = (state: Store.AllReducers): ConnectedState => ({
 	counter: state.counter,
 })
 
-const mapDispatchToProps = (dispatch: redux.Dispatch<Store.All>): ConnectedDispatch => ({
+const mapDispatchToProps = (dispatch: redux.Dispatch<Store.AllReducers>): ConnectedDispatch => ({
 	increment: (n: number): void => {
 		dispatch(incrementCounter(n))
 	},

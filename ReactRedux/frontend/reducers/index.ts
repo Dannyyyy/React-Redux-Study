@@ -4,18 +4,18 @@ import { Action } from "../actions/index";
 
 export namespace Store {
 
-	export type Counter = { value: number }
+	export type CounterState = { value: number }
 
-	export type All = {
-		counter: Counter
+	export type AllReducers = {
+		counter: CounterState
 	}
 }
 
-const initialState: Store.Counter = {
+const initialState: Store.CounterState = {
 	value: 0
 }
 
-function counter(state: Store.Counter = initialState, action: Action): Store.Counter {
+function counter(state: Store.CounterState = initialState, action: Action): Store.CounterState {
 	switch (action.type) {
 		case 'INCREMENT_COUNTER':
 			const { delta } = action
@@ -29,6 +29,6 @@ function counter(state: Store.Counter = initialState, action: Action): Store.Cou
 	}
 }
 
-export const reducers = combineReducers<Store.All>({
+export default combineReducers<Store.AllReducers>({
 	counter
 })

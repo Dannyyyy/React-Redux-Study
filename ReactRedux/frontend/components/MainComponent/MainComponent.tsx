@@ -2,13 +2,13 @@ import * as React from 'react';
 import * as Redux from "redux";
 import { Provider } from 'react-redux';
 
+import configureStore from "../../store/configureStore";
+
 import './main-component.less';
 
 import { Counter } from "../Counter/Counter";
 
-import {reducers, Store } from "../../reducers/index";
-
-let store: Redux.Store<Store.All> = Redux.createStore(reducers)
+const store = configureStore();
 
 export default class MainComponent extends React.Component<{}, {}>{
     constructor(props) {
