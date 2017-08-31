@@ -50,15 +50,16 @@
   <ItemGroup>
     <TypeScriptCompile Include="frontend\actions\counter-action.ts" />
     <TypeScriptCompile Include="frontend\actions\action.ts" />
-    <TypeScriptCompile Include="frontend\actions\sport-action.ts" />
-    <TypeScriptCompile Include="frontend\api\sport-api.ts" />
+    <TypeScriptCompile Include="frontend\actions\geography-action.ts" />
+    <TypeScriptCompile Include="frontend\api\geography-api.ts" />
     <TypeScriptCompile Include="frontend\components\Counter\Counter.tsx" />
     <TypeScriptCompile Include="frontend\components\MainComponent\MainComponent.tsx" />
-    <TypeScriptCompile Include="frontend\components\Sport\SportsList.tsx" />
+    <TypeScriptCompile Include="frontend\components\Geography\Geography.tsx" />
+    <TypeScriptCompile Include="frontend\components\Geography\CountriesListContainer.tsx" />
     <TypeScriptCompile Include="frontend\main.tsx" />
     <TypeScriptCompile Include="frontend\reducers\counter-reducer.ts" />
     <TypeScriptCompile Include="frontend\reducers\index.ts" />
-    <TypeScriptCompile Include="frontend\reducers\sport-reducer.ts" />
+    <TypeScriptCompile Include="frontend\reducers\geography-reducer.ts" />
     <TypeScriptCompile Include="frontend\store\store.ts" />
     <TypeScriptCompile Include="frontend\store\storeStates.ts" />
   </ItemGroup>

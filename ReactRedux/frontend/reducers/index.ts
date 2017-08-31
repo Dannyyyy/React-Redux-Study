@@ -2,9 +2,9 @@
 
 import { storeStates } from "../store/storeStates";
 import { counter } from "./counter-reducer";
-import { sport } from "./sport-reducer";
+import { geography } from "./geography-reducer";
 
 export default combineReducers<storeStates.AllReducers>({
 	counter,
-	sport
+	geography
 })

@@ -2,4 +2,4 @@
 	// UI actions
 	{ type: 'INCREMENT_COUNTER', delta: number }
 	| { type: 'RESET_COUNTER' }
-	| { type: 'LOAD_SPORTS_SUCCESS', data: any }
+	| { type: 'LOAD_GEOGRAPHY_SUCCESS', data: any }

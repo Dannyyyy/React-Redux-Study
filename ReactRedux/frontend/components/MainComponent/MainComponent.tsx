@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from "../../store/store";
 import './main-component.less';
 import { Counter } from "../Counter/Counter";
-import { SportsList } from "../Sport/SportsList";
+import { Geography } from "../Geography/Geography";
 
 export default class MainComponent extends React.Component<{}, {}>{
     constructor(props) {
@@ -34,7 +34,7 @@ export default class MainComponent extends React.Component<{}, {}>{
 						<div className="react-logo" />
 					</div>
 					<Counter />
-					<SportsList />
+					<Geography />
 				</div>
 			</ Provider>
         );
