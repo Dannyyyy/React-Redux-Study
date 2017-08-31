@@ -1,7 +1,4 @@
-﻿export type Action =
-	// UI actions
-	{ type: 'INCREMENT_COUNTER', delta: number }
-	| { type: 'RESET_COUNTER' }
+﻿import { Action } from "./action";
 
 export const incrementCounter = (delta: number): Action => ({
 	type: 'INCREMENT_COUNTER',

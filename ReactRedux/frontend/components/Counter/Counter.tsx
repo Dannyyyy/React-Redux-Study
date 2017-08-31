@@ -2,7 +2,7 @@
 import * as redux from "redux";
 import { connect } from "react-redux";
 
-import { incrementCounter, resetCounter } from "../../actions/index";
+import { incrementCounter, resetCounter } from "../../actions/counter-action";
 import { storeStates } from "../../store/storeStates";
 import "./counter.less";
 
@@ -16,7 +16,7 @@ type ConnectedDispatch = {
 }
 
 const mapStateToProps = (state: storeStates.AllReducers): ConnectedState => ({
-	counter: state.counter,
+	counter: state.counter
 })
 
 const mapDispatchToProps = (dispatch: redux.Dispatch<storeStates.AllReducers>): ConnectedDispatch => ({

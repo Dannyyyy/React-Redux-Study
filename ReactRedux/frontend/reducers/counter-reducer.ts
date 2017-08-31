@@ -1,5 +1,5 @@
 ﻿import { storeStates } from "../store/storeStates";
-import { Action } from "../actions/index";
+import { Action } from "../actions/action";
 
 const initialState: storeStates.CounterState = {
 	value: 0

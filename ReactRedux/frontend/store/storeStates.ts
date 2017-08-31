@@ -2,9 +2,10 @@
 
 	export type CounterState = { value: number }
 
-	export type SportState = { sports: Array<string> }
+	export type SportState = { data: any }
 
 	export type AllReducers = {
-		counter: CounterState
+		counter: CounterState,
+		sport: SportState
 	}
 }
