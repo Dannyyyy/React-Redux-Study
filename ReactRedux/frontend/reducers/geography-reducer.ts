@@ -8,7 +8,7 @@ const initialState: storeStates.GeographyState = {
 export function geography(state: storeStates.GeographyState = initialState, action: Action): storeStates.GeographyState {
 	switch (action.type) {
 		case 'LOAD_GEOGRAPHY_SUCCESS':
-			return { data: action.data };
+			return {...state, data: action.data };
 
 		default:
 			return state

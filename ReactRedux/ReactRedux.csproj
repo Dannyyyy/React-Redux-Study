@@ -53,6 +53,7 @@
     <TypeScriptCompile Include="frontend\actions\geography-action.ts" />
     <TypeScriptCompile Include="frontend\api\geography-api.ts" />
     <TypeScriptCompile Include="frontend\components\Counter\Counter.tsx" />
+    <TypeScriptCompile Include="frontend\components\Geography\CitiesListContainer.tsx" />
     <TypeScriptCompile Include="frontend\components\MainComponent\MainComponent.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\Geography.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\CountriesListContainer.tsx" />
