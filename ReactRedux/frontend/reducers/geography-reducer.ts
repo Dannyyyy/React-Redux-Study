@@ -8,9 +8,15 @@ const initialState: storeStates.GeographyState = {
 export function geography(state: storeStates.GeographyState = initialState, action: Action): storeStates.GeographyState {
 	switch (action.type) {
 		case 'LOAD_GEOGRAPHY_SUCCESS':
-			return {...state, data: action.data };
+			console.log('LOAD_GEOGRAPHY_SUCCESS');
+			return { ...state, data: action.data };
+
+		case 'GET_GEOGRAPHY_DATA':
+			console.log('GET_GEOGRAPHY_DATA');
+			return state;
 
 		default:
-			return state
+			console.log('default');
+			return state;
 	}
 }

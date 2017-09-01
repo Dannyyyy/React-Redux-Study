@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as geographyApi from "../../api/geography-api";
 import { storeStates } from "../../store/storeStates";
 import store from "../../store/store";
-import CountriesListContainer from "./CountriesListContainer";
+import { CountriesListContainer } from "./CountriesListContainer";
 
 type ConnectedState = {
 	geography: { data: any }
@@ -36,7 +36,7 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 		return (
 			<div>
 				<div>{"Sport list: "}</div>
-				<CountriesListContainer countries={this.props.geography.data} />
+				<CountriesListContainer />
 			</div>
 		);
 	}
