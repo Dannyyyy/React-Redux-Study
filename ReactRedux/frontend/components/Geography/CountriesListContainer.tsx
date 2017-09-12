@@ -7,6 +7,7 @@ const uuidv1 = require('uuid/v1');
 import { storeStates } from "../../store/storeStates";
 import { getGeographyData } from "../../actions/geography-action";
 import CitiesListContainer from "../Geography/CitiesListContainer";
+import { CountryContainer }  from "../Geography/countryContainer";
 
 type ConnectedState = {
 	geography: { data: any }
@@ -42,10 +43,7 @@ class CountriesListContainerComponent extends React.Component< ConnectedState & 
 		if (countries.length) {
 			return (
 				<div>
-					{countries.map((country, i) => (
-						<CitiesListContainer country={country} cities={geography.data[country]} key={uuidv1()} />
-						)
-					)}
+					{countries.map((country, i) => (<CountryContainer country={country} key={uuidv1()} />))}
 				</div>
 			);
 		}

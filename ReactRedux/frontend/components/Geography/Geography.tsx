@@ -6,6 +6,7 @@ import * as geographyApi from "../../api/geography-api";
 import { storeStates } from "../../store/storeStates";
 import store from "../../store/store";
 import { CountriesListContainer } from "./CountriesListContainer";
+import "./geography.less";
 
 type ConnectedState = {
 	geography: { data: any }
@@ -32,10 +33,9 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 	}
 
 	public render(): JSX.Element {
-		console.log(this.props.geography);
 		return (
-			<div>
-				<div>{"Sport list: "}</div>
+			<div className={'geography-position'}>
+				<div className="countries-list">{"Countries list: "}</div>
 				<CountriesListContainer />
 			</div>
 		);

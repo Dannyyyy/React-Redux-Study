@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as Redux from "redux";
 import { Provider } from 'react-redux';
+import { Link } from "react-router-dom";
 
 import store from "../../store/store";
 import './main-component.less';
@@ -24,7 +25,7 @@ export default class MainComponent extends React.Component<{}, {}>{
         const webpackLogoPath = require('!svg-url-loader?noquotes!./webpack-logo.svg');
 
 		return (
-			<Provider store={store}>
+			
 				<div>
 					<h1>
 						{this.getMessage()}
@@ -33,10 +34,12 @@ export default class MainComponent extends React.Component<{}, {}>{
 						<img src={webpackLogoPath} className='webpack-logo' />
 						<div className="react-logo" />
 					</div>
-					<Counter />
-					<Geography />
+					<div className="links">
+						<Link to="/counter">Counter >>></Link>
+						<Link to="/geography">Geography >>></Link>
+					</div>
 				</div>
-			</ Provider>
+			
         );
     }
 }

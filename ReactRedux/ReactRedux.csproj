@@ -39,6 +39,7 @@
     <Content Include="frontend\shared\fonts\SegoeUI\SegoeUIRegular.woff" />
     <Content Include="frontend\components\Counter\counter.less" />
     <Content Include="frontend\shared\styles\shared-styles.less" />
+    <Content Include="frontend\components\Geography\geography.less" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -54,6 +55,7 @@
     <TypeScriptCompile Include="frontend\api\geography-api.ts" />
     <TypeScriptCompile Include="frontend\components\Counter\Counter.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\CitiesListContainer.tsx" />
+    <TypeScriptCompile Include="frontend\components\Geography\CountryContainer.tsx" />
     <TypeScriptCompile Include="frontend\components\MainComponent\MainComponent.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\Geography.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\CountriesListContainer.tsx" />
@@ -61,6 +63,7 @@
     <TypeScriptCompile Include="frontend\reducers\counter-reducer.ts" />
     <TypeScriptCompile Include="frontend\reducers\index.ts" />
     <TypeScriptCompile Include="frontend\reducers\geography-reducer.ts" />
+    <TypeScriptCompile Include="frontend\components\StartPage.tsx" />
     <TypeScriptCompile Include="frontend\store\store.ts" />
     <TypeScriptCompile Include="frontend\store\storeStates.ts" />
   </ItemGroup>
