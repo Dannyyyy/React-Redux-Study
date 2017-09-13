@@ -17,10 +17,15 @@ export class CountryContainer extends React.Component<CountryProps, {}>{
 
 	public render(): JSX.Element {
 		const { geography, country } = this.props;
+		const divClassName = "country";
 
 		return (
 			<div>
-				<div onClick={this.onClick}>{country}</div>
+				<div className={divClassName}>
+					<span className={'title'} onClick={this.onClick}>{country}</span>
+					<span className={'delete-btn'}>{"Удалить"}</span>
+				</div>
+				
 				{this.isCitiesVisible ? 
 					<CitiesListContainer cities={geography[country]} key={uuidv1()} /> :
 					null

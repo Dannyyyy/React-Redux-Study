@@ -17,3 +17,60 @@
 	padding: 10px;
 	border-radius: 10px;
 }
+
+@active-color: #145507;
+
+.country{
+	margin: 5px;
+	background-color: lightgreen;
+	color: white;
+	font-size: 20px;
+	border-radius: 10px;
+	padding: 7px;
+	-webkit-transition: background-color 2s, padding 1s;
+	-webkit-transition-delay: .3s;
+	width:inherit;
+
+	&.expanded{
+		padding: 10px;
+		background-color: @active-color;
+	}
+
+	>span{
+		display: inline-block;
+
+		&.title{
+			width: 70%;
+		}
+
+		&.delete-btn{
+			text-align: center;
+			width: 30%;
+			background: #b65b5b;
+			border-radius: 2px;
+		}
+	}
+}
+
+.country:hover{
+	padding: 10px;
+	background-color: @active-color;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
