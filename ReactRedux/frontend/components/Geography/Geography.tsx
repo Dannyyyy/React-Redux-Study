@@ -4,12 +4,11 @@ import { connect } from "react-redux";
 
 import * as geographyApi from "../../api/geography-api";
 import { storeStates } from "../../store/storeStates";
-import store from "../../store/store";
 import { CountriesListContainer } from "./CountriesListContainer";
 import "./geography.less";
 
 type ConnectedState = {
-	geography: { data: any }
+	geography: { data: any, isDownloaded: boolean }
 }
 
 const mapStateToProps = (state: storeStates.AllReducers): ConnectedState => ({
@@ -29,14 +28,21 @@ const mapDispatchToProps = (dispatch: redux.Dispatch<storeStates.AllReducers>): 
 class GeographyComponent extends React.Component<ConnectedState & ConnectedDispatch, {}>{
 
 	componentDidMount() {
-		this.props.load();
+		const { load, geography } = this.props;
+
+		if (!geography.isDownloaded) {
+			load();
+		}
 	}
 
 	public render(): JSX.Element {
 		return (
 			<div className={'geography-position'}>
 				<div className="countries-list">{"Countries list: "}</div>
-				<CountriesListContainer />
+				{this.props.geography.isDownloaded ? 
+					<CountriesListContainer /> : 
+					<div>{"Download..."}</div>
+				}
 			</div>
 		);
 	}

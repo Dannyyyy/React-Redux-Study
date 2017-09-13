@@ -2,14 +2,15 @@
 import { Action } from "../actions/action";
 
 const initialState: storeStates.GeographyState = {
-	data: []
+	data: [],
+	isDownloaded: false
 }
 
 export function geography(state: storeStates.GeographyState = initialState, action: Action): storeStates.GeographyState {
 	switch (action.type) {
 		case 'LOAD_GEOGRAPHY_SUCCESS':
 			console.log('LOAD_GEOGRAPHY_SUCCESS');
-			return { ...state, data: action.data };
+			return { ...state, data: action.data, isDownloaded: true };
 
 		case 'GET_GEOGRAPHY_DATA':
 			console.log('GET_GEOGRAPHY_DATA');

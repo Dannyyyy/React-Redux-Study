@@ -2,7 +2,7 @@
 
 	export type CounterState = { value: number }
 
-	export type GeographyState = { data: any }
+	export type GeographyState = { data: any, isDownloaded: boolean }
 
 	export type AllReducers = {
 		counter: CounterState,

@@ -9,7 +9,7 @@ import { getGeographyData } from "../../actions/geography-action";
 import CitiesListContainer from "../Geography/CitiesListContainer";
 
 type ConnectedState = {
-	geography: { data: any }
+	geography: { data: any, isDownloaded: boolean }
 }
 
 type CountryProps = {
@@ -37,20 +37,23 @@ class CountryContainerComponent extends React.Component<ConnectedState & Connect
 	onClick = () => { this.isCitiesVisible = !this.isCitiesVisible; this.forceUpdate(); }
 
 	componentDidMount() {
-		this.props.load();
+		if (!this.props.geography.isDownloaded) {
+			this.props.load();
+		}
 	}
 
 	public render(): JSX.Element {
 		const { geography, country } = this.props;
-		if (this.isCitiesVisible) {
-			return (
-				<div>
-					<div onClick={this.onClick}> \/ {country}</div>
-					<CitiesListContainer cities={geography.data[country]} key={uuidv1()} />
-				</div>
-			);
-		}
-		return (<div onClick={this.onClick}> > {country}</div>);
+
+		return (
+			<div>
+				<div onClick={this.onClick}>{country}</div>
+				{this.isCitiesVisible ? 
+					<CitiesListContainer cities={geography.data[country]} key={uuidv1()} /> :
+					null
+				}
+			</div>
+		);
 	}
 }
 

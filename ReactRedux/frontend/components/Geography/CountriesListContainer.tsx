@@ -10,7 +10,7 @@ import CitiesListContainer from "../Geography/CitiesListContainer";
 import { CountryContainer }  from "../Geography/countryContainer";
 
 type ConnectedState = {
-	geography: { data: any }
+	geography: { data: any, isDownloaded: boolean }
 }
 
 const mapStateToProps = (state: storeStates.AllReducers): ConnectedState => ({
@@ -30,7 +30,9 @@ const mapDispatchToProps = (dispatch: redux.Dispatch<storeStates.AllReducers>): 
 class CountriesListContainerComponent extends React.Component< ConnectedState & ConnectedDispatch , {}>{
 
 	componentDidMount() {
-		this.props.load();
+		if (!this.props.geography.isDownloaded) {
+			this.props.load();
+		}	
 	}
 
 	public render(): JSX.Element {
