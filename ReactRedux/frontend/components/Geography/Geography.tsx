@@ -36,11 +36,13 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 	}
 
 	public render(): JSX.Element {
+		const { geography } = this.props;
+
 		return (
 			<div className={'geography-position'}>
 				<div className="countries-list">{"Countries list: "}</div>
-				{this.props.geography.isDownloaded ? 
-					<CountriesListContainer /> : 
+				{geography.isDownloaded ?
+					<CountriesListContainer geography={geography.data} /> : 
 					<div>{"Download..."}</div>
 				}
 			</div>
