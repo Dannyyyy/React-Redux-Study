@@ -8,3 +8,8 @@ export const loadGeographySuccess = (data: any): Action => ({
 export const getGeographyData = (): Action => ({
 	type: 'GET_GEOGRAPHY_DATA'
 })
+
+export const deleteCountry = (country: string): Action => ({
+	type: 'DELETE_COUNTRY',
+	country
+});

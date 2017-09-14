@@ -16,6 +16,12 @@ export function geography(state: storeStates.GeographyState = initialState, acti
 			console.log('GET_GEOGRAPHY_DATA');
 			return state;
 
+		case 'DELETE_COUNTRY':
+			const { country } = action;
+			let data = state.data;
+			delete data[country];
+			return { ...state, data: data};
+
 		default:
 			console.log('default');
 			return state;

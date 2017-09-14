@@ -20,7 +20,7 @@ export class CountriesListContainer extends React.Component< CountriesProps , {}
 		return (
 			<div>
 				{countries.map((country, i) => (
-					<CountryContainer geography={geography} country={country} key={uuidv1()} />)
+					<CountryContainer country={country} key={uuidv1()} />)
 				)}
 			</div>
 		);
