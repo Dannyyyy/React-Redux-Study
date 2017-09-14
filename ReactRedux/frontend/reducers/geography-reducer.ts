@@ -1,8 +1,10 @@
 ﻿import { storeStates } from "../store/storeStates";
 import { Action } from "../actions/action";
 
+import CountriesList from "../classes/CountriesList";
+
 const initialState: storeStates.GeographyState = {
-	data: [],
+	data: new CountriesList(),
 	isDownloaded: false
 }
 
@@ -17,22 +19,22 @@ export function geography(state: storeStates.GeographyState = initialState, acti
 			return state;
 
 		case 'DELETE_COUNTRY': {
-			const { country } = action;
+			const { countryName } = action;
 			let data = state.data;
-			delete data[country];
+			data.list = data.removeCountry(countryName);
 			return { ...state, data: data };
 		}
 
 		case 'SORT_ASCENDING': {
-			//let data = state.data;
-			//data.sort();
-			return state;
+			let data = state.data;
+			data.list = data.sortAscending();
+			return { ...state, data: data };
 		}
 
 		case 'SORT_DESCENDING': {
-			//let data = state.data;
-			//data.sort();
-			return state;
+			let data = state.data;
+			data.list = data.sortDescending();
+			return { ...state, data: data };
 		}
 
 		default:

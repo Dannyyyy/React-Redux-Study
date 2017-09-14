@@ -7,14 +7,15 @@ import { sortAscending, sortDescending } from "../../actions/geography-action";
 import { storeStates } from "../../store/storeStates";
 import { CountriesListContainer } from "./CountriesListContainer";
 import Download from "../Download/Download";
+import CountriesList from "../../classes/CountriesList";
 import "./geography.less";
 
 type ConnectedState = {
-	geography: { data: any, isDownloaded: boolean }
+	countries: { data: CountriesList, isDownloaded: boolean }
 }
 
 const mapStateToProps = (state: storeStates.AllReducers): ConnectedState => ({
-	geography: state.geography
+	countries: state.geography
 })
 
 type ConnectedDispatch = {
@@ -42,9 +43,9 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 	sortAscending = (): void => { this.props.sortAscending() };
 
 	initialActions = () => {
-		const { load, geography } = this.props;
+		const { load, countries } = this.props;
 
-		if (!geography.isDownloaded) {
+		if (!countries.isDownloaded) {
 			load();
 		}
 	}
@@ -54,7 +55,7 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 	}
 
 	public render(): JSX.Element {
-		const { geography } = this.props;
+		const { countries } = this.props;
 
 		return (
 			<div className={'geography-position'}>
@@ -63,8 +64,8 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 					<span className={'title'}>{"Countries list: "}</span>
 					<span className={'sort'} onClick={this.sortDescending}>{"▼"}</span>
 				</span>
-				{geography.isDownloaded ?
-					<CountriesListContainer geography={geography.data} /> :
+				{countries.isDownloaded ?
+					<CountriesListContainer countriesList={countries.data} /> :
 					<Download />
 				}
 			</div>

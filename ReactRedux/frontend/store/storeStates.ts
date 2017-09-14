@@ -1,8 +1,10 @@
-﻿export namespace storeStates {
+﻿import CountriesList from "../classes/CountriesList";
+
+export namespace storeStates {
 
 	export type CounterState = { value: number }
 
-	export type GeographyState = { data: any, isDownloaded: boolean }
+	export type GeographyState = { data: CountriesList, isDownloaded: boolean }
 
 	export type AllReducers = {
 		counter: CounterState,
