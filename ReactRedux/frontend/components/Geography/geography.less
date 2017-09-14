@@ -8,7 +8,7 @@
     }
 }
 
-.countries-list{
+.list-title{
 	margin: 5px;
 	background-color: #680ea0;
 	color: white;
@@ -16,6 +16,19 @@
 	text-align:center;
 	padding: 10px;
 	border-radius: 10px;
+	
+	> span{ 
+
+		&.title{
+			width: 50%;
+	    }
+
+		&.sort{
+			width: 25%;
+		}
+
+		display:inline-table;
+	}
 }
 
 @active-color: #145507;
