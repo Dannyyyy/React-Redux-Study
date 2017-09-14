@@ -6,6 +6,7 @@ import * as geographyApi from "../../api/geography-api";
 import { sortAscending, sortDescending } from "../../actions/geography-action";
 import { storeStates } from "../../store/storeStates";
 import { CountriesListContainer } from "./CountriesListContainer";
+import Download from "../Download/Download";
 import "./geography.less";
 
 type ConnectedState = {
@@ -40,12 +41,16 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 
 	sortAscending = (): void => { this.props.sortAscending() };
 
-	componentDidMount() {
+	initialActions = () => {
 		const { load, geography } = this.props;
 
 		if (!geography.isDownloaded) {
 			load();
 		}
+	}
+
+	componentDidMount() {
+		setTimeout(this.initialActions, 5000);
 	}
 
 	public render(): JSX.Element {
@@ -59,8 +64,8 @@ class GeographyComponent extends React.Component<ConnectedState & ConnectedDispa
 					<span className={'sort'} onClick={this.sortDescending}>{"▼"}</span>
 				</span>
 				{geography.isDownloaded ?
-					<CountriesListContainer geography={geography.data} /> : 
-					<div>{"Download..."}</div>
+					<CountriesListContainer geography={geography.data} /> :
+					<Download />
 				}
 			</div>
 		);
