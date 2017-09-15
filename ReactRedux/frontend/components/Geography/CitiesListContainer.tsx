@@ -10,8 +10,8 @@ export default class CitiesListContainer extends React.Component<{ cities: Array
 
 		const names = this.props.cities.map((city, i) => { return city.name });
 
-		return (	
-			<div>{names.map((name, i) => (<div key={uuidv1()}># {name}</div>))}</div>
+		return (
+			<div>{names.map((name, i) => (<div className={'city'} key={i.toString()}>• {name}</div>))}</div>
 		);
 	}
 }

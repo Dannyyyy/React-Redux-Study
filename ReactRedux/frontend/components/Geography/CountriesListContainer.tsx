@@ -18,7 +18,7 @@ export class CountriesListContainer extends React.Component< CountriesProps , {}
 		return (
 			<div>
 				{countries.map((country, i) => (
-					<CountryContainer countryName={country.name} key={uuidv1()} />)
+					<CountryContainer countryName={country.name} key={country.name} />)
 				)}
 			</div>
 		);

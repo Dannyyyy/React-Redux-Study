@@ -1,6 +1,7 @@
 ﻿import * as React from "react";
 import * as redux from "redux";
 import { connect } from "react-redux";
+import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 
 const uuidv1 = require('uuid/v1');
 
@@ -8,6 +9,8 @@ import { storeStates } from "../../store/storeStates";
 import { getGeographyData, deleteCountry } from "../../actions/geography-action";
 import CitiesListContainer from "../Geography/CitiesListContainer";
 import CountriesList from "../../classes/CountriesList";
+
+import "./geography.less";
 
 type ConnectedState = {
 	countries: { data: CountriesList, isDownloaded: boolean }
@@ -55,15 +58,25 @@ class CountryContainerComponent extends React.Component<ConnectedState & Connect
 
 		return (
 			<div>
-				<div className={divClassName}>
-					<span className={'title'} onClick={this.onExpanded}>{countryName}</span>
-					<span className={'delete-btn'} id={countryName} onClick={this.onDeleted}>{"Удалить"}</span>
-				</div>
+				<ReactCSSTransitionGroup
+					transitionAppear={true}
+					transitionLeave={true}
+					transitionEnter={true}
+					transitionLeaveTimeout={400}
+					transitionEnterTimeout={1000}
+					transitionAppearTimeout={1000}
+					transitionName="example">
 
-				{this.isCitiesVisible ?
-					<CitiesListContainer cities={countries.data.getCities(countryName)} key={uuidv1()} /> :
-					null
-				}
+					<div className={divClassName}>
+						<span className={'title'} onClick={this.onExpanded}>{countryName}</span>
+						<span className={'delete-btn'} id={countryName} onClick={this.onDeleted}>{"Удалить"}</span>
+					</div>
+
+					{this.isCitiesVisible ?
+						<CitiesListContainer cities={countries.data.getCities(countryName)} key={countryName} /> :
+						null
+					}
+				</ReactCSSTransitionGroup>
 			</div>
 		);
 	}

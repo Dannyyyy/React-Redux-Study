@@ -27,6 +27,10 @@
 			width: 25%;
 		}
 
+		&.sort:hover{
+			transform:scale(1.4);
+		}
+
 		display:inline-table;
 	}
 }
@@ -40,12 +44,11 @@
 	font-size: 20px;
 	border-radius: 10px;
 	padding: 7px;
-	-webkit-transition: background-color 2s, padding 1s;
-	-webkit-transition-delay: .3s;
-	width:inherit;
+	-webkit-transition: background-color .7s, padding .7s, margin-left .7s;
 
 	&.expanded{
 		padding: 10px;
+		margin-left: 15px;
 		background-color: @active-color;
 	}
 
@@ -61,32 +64,59 @@
 			width: 30%;
 			background: #b65b5b;
 			border-radius: 10px;
+			-webkit-transition: background .5s;
+		}
+
+		&.delete-btn:hover{
+			background: #d31e1e;
 		}
 	}
 }
 
 .country:hover{
-	padding: 10px;
 	background-color: @active-color;
+	margin-left: 15px;
 }
-/*
+
+.city{
+	margin-left: 15px;
+	margin-bottom: 5px;
+	background-color: #b5833d;
+	color: white;
+	font-size: 18px;
+	border-radius: 10px;
+	padding: 3px;
+	-webkit-transition: margin-left .5s;
+}
+
+.city:hover{
+	margin-left: 25px;
+}
+
 .example-enter {
   opacity: 0.01;
+  transition: opacity .5s ease-in;
 }
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity 3s ease-in;
 }
 
 .example-leave {
   opacity: 1;
-  background-color:aqua;
+  transition: opacity 1s ease-in;
 }
 
 .example-leave.example-leave-active {
   opacity: 0.01;
-  transition: opacity 3s ease-in;
+  transition: opacity 300ms ease-in;
 }
 
-*/
+.example-appear {
+  opacity: 0.01;
+  transition: opacity 1s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}
