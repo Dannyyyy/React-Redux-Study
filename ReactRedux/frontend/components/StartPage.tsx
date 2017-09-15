@@ -7,6 +7,7 @@ import store from "../store/store";
 import MainComponent from "./MainComponent/MainComponent";
 import { Counter } from "./Counter/Counter";
 import { Geography } from "./Geography/Geography";
+import { Test } from "./Test/Test";
 
 const browserHistory = createBrowserHistory();
 
@@ -19,6 +20,7 @@ export default class StartPage extends React.Component<{}, {}>{
 						<Route exact path="/" component={MainComponent} />
 						<Route path="/counter" component={Counter} />
 						<Route path="/geography" component={Geography} />
+						<Route path="/test" component={Test} />
 					</Switch>
 				</Router>
 			</ Provider>

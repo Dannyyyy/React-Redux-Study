@@ -37,6 +37,7 @@ export default class MainComponent extends React.Component<{}, {}>{
 					<div className="links">
 						<Link to="/counter">Counter >>></Link>
 						<Link to="/geography">Geography >>></Link>
+						<Link to="/test">Test >>></Link>
 					</div>
 				</div>
 			

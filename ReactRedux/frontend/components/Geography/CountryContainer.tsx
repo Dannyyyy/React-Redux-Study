@@ -51,7 +51,7 @@ class CountryContainerComponent extends React.Component<ConnectedState & Connect
 
 	public render(): JSX.Element {
 		const { countries, countryName } = this.props;
-		const divClassName = "country";
+		const divClassName = "country" + (this.isCitiesVisible ? " expanded" : "");
 
 		return (
 			<div>

@@ -41,6 +41,7 @@
     <Content Include="frontend\shared\styles\shared-styles.less" />
     <Content Include="frontend\components\Geography\geography.less" />
     <Content Include="frontend\components\Download\download.less" />
+    <Content Include="frontend\components\Test\test.less" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -64,6 +65,7 @@
     <TypeScriptCompile Include="frontend\components\MainComponent\MainComponent.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\Geography.tsx" />
     <TypeScriptCompile Include="frontend\components\Geography\CountriesListContainer.tsx" />
+    <TypeScriptCompile Include="frontend\components\Test\Test.tsx" />
     <TypeScriptCompile Include="frontend\main.tsx" />
     <TypeScriptCompile Include="frontend\reducers\counter-reducer.ts" />
     <TypeScriptCompile Include="frontend\reducers\index.ts" />
